@@ -1,0 +1,41 @@
+//Royce Payne Quadratic Solver
+import java.util.Scanner;
+
+public class Main {
+
+	private static Scanner input;
+
+	public static void main(String[] args){ 
+    int iteration = 0;
+
+    while (iteration < 3){	
+    double r1, r2, iNum, discriminant;
+		double x, y, z;
+		//x, y, z are respective to a, b, and c in the quadratic formula
+    input = new Scanner(System.in);
+		System.out.print("Enter the first value of the quadratic: ");
+		x = input.nextDouble();	
+    System.out.print("Enter the second value of the quadratic: ");
+		y = input.nextDouble();
+    System.out.print("Enter the third value of the quadratic: ");
+		z = input.nextDouble();
+
+//based on input, discriminant will be determined using formula
+		discriminant = y * y - 4 * x *z;
+	  	if(discriminant > 0){
+	  		r1 = (-y + Math.sqrt(discriminant)) / (2 * x);
+	  		r2 = (-y - Math.sqrt(discriminant)) / (2 * x);
+	  		System.out.println("\n There are two unique roots: Root 1 = " + r1 + " and Root 2 = " + r2);}
+	  	else if(discriminant == 0){
+	  		r1 = r2 = -y / (2 * x);
+	  		System.out.println("\n There are two equal and unique roots: Root 1 = " + r1 + " and Root 2 = " + r2);}
+	  	else if(discriminant < 0){
+	  		r1 = r2 = -y / (2 * x);
+	  		iNum = Math.sqrt(-discriminant) / (2 * x);
+	  		System.out.println("\n There are two unique complex roots: Root 1 = " + 
+	  						r1 + " + " + iNum + "i and Root 2 = " + r2 +" - " + iNum +'i');
+      iteration = iteration + 1;
+	  	}	
+  }	
+	}
+}
