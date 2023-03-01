@@ -1,0 +1,14 @@
+from urllib.request import urlopen
+
+url = "http://olympus.realpython.org/profiles/dionysus"
+html_page = urlopen(url)
+html = html_page.read().decode("utf-8")
+
+title = html.find("<title>")
+print(title)
+startName = title + len("<title>")
+endName = html.find("</title>")
+
+nameVar = html[startName:endName]
+
+print(nameVar)
