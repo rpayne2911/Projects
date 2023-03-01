@@ -1,0 +1,45 @@
+<?php
+function menu ($menuChoice){
+  if ($menuChoice == 1){
+    hexagon();}
+  if ($menuChoice == 2){
+    rectangle();}
+  if ($menuChoice == 3){
+    circle();}
+  else{exit ("Thank you for using the quadratic solver.");}
+}
+
+function hexagon(){
+$side = readline("What's the length of the sides of the hexagon? \r\n");
+$area = ((3 * sqrt((3)) *  ($side * $side)) / 2);
+$perimeter = $side * 6;
+echo "The perimeter of the hexagon is ", $perimeter, ". \r\n";
+echo "The area of the hexagon is ", $area, ". \r\n";
+}
+
+function rectangle(){
+$length = readline( "What's the length of the rectangle? \r\n");
+$width = readline( "What's the width of the rectangle? \r\n");
+
+$perimeter = ($length * 2) + ($width * 2);
+$area = ($length * $width);
+echo "The perimeter of the rectangle is ", $perimeter, ". \r\n";
+echo "The area of the rectangle is ", $area, ". \r\n";
+}
+
+function circle(){
+$radius = readline( "What's the radius of the circle? ");
+$circum = (2 * pi() * $radius);
+$area = (($radius **2) * pi());
+echo "The circumference of the circle is ", $circum, ". \r\n";
+echo "The area of the circle is ", $area, ". \r\n";
+}
+
+$menuChoice = readline( "Which shape would you like to see the perimeter and area for? \r\n
+1: Hexagon \r\n
+2: Rectangle \r\n
+3: Circle \r\n
+0: Quit \r\n");
+
+menu($menuChoice);
+?>
